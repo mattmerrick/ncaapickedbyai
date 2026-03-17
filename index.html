@@ -502,7 +502,81 @@
     .bteam.finalist { border-color:#445; background:#1a1f2e; }
     .b-upset-dot { width:5px; height:5px; border-radius:50%; background:var(--upset); flex-shrink:0; margin-left:auto; }
     .view-bar-note { font-size:.72rem; color:var(--muted); }
+
+    /* Cool Facts panel */
+    .facts-panel { padding:0 4px 24px; }
+    .facts-hero { text-align:center; padding:24px 16px 20px; }
+    .facts-title { font-size:clamp(1.5rem,4vw,2rem); font-weight:800; letter-spacing:-.5px; color:var(--text); margin-bottom:6px; }
+    .facts-subtitle { font-size:.9rem; color:var(--muted); }
+    .facts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-bottom:28px; }
+    .fact-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; position:relative; overflow:hidden; }
+    .fact-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent2)); opacity:.8; }
+    .fact-big .fact-stat { font-size:clamp(2.2rem,6vw,3.5rem); font-weight:900; color:var(--accent); line-height:1; letter-spacing:-2px; }
+    .fact-big .fact-label { font-size:.85rem; font-weight:700; color:var(--text); margin-top:6px; }
+    .fact-big .fact-detail { font-size:.78rem; color:var(--muted); margin-top:8px; line-height:1.4; }
+    .fact-bar { height:6px; background:var(--surface2); border-radius:3px; margin-top:14px; overflow:hidden; }
+    .fact-bar-fill { height:100%; background:linear-gradient(90deg,var(--accent),var(--champion)); border-radius:3px; transition:width .5s ease; }
+    .fact-emoji { font-size:2.5rem; position:absolute; bottom:16px; right:20px; opacity:.4; }
+    .facts-section { margin-bottom:28px; }
+    .facts-section-title { font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.8px; color:var(--muted); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+    .champ-comparison { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+    .champ-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; display:flex; flex-direction:column; align-items:center; gap:4px; }
+    .champ-card.grok { border-color:var(--accent2); background:linear-gradient(180deg,#2a1f1a 0%,var(--surface) 40%); }
+    .champ-card.others { border-left:3px solid var(--champion); }
+    .champ-emoji { font-size:1.3rem; }
+    .champ-ai { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); }
+    .champ-team { font-size:1.1rem; font-weight:800; color:var(--champion); }
+    .champ-vs { font-size:.72rem; color:var(--muted); }
+    .champ-score { font-size:.7rem; font-weight:700; color:var(--accent); }
+    .region-comparison { background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .region-row { display:grid; grid-template-columns:80px 1fr 1fr 1fr 1fr 70px; gap:8px; align-items:center; padding:12px 16px; border-bottom:1px solid var(--border); }
+    .region-row:last-child { border-bottom:none; }
+    .region-name { font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.5px; padding:4px 8px; border-radius:6px; width:fit-content; }
+    .region-name.east { background:#1a2740; color:#58a6ff; }
+    .region-name.west { background:#0d2a14; color:#3fb950; }
+    .region-name.midwest { background:#2a1a14; color:#f78166; }
+    .region-name.south { background:#2a1a2a; color:#d2a8ff; }
+    .region-pick { font-size:.82rem; font-weight:600; }
+    .region-pick.same { color:var(--text); }
+    .region-pick.grok-pick { color:var(--accent2); font-weight:700; }
+    .region-consensus { font-size:.68rem; font-weight:700; color:var(--muted); text-transform:uppercase; }
+    .region-legend { padding:10px 16px; font-size:.7rem; color:var(--muted); border-top:1px dashed var(--border); }
+    .upset-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+    .upset-card { background:var(--surface); border:1px solid #4a2020; border-radius:10px; padding:14px; display:flex; flex-direction:column; gap:4px; }
+    .upset-card .upset-ai { font-size:.72rem; font-weight:700; color:var(--upset); }
+    .upset-card .upset-match { font-size:.85rem; font-weight:700; color:var(--text); }
+    .upset-card .upset-round { font-size:.68rem; color:var(--muted); }
+    .ff-comparison { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+    .ff-ai-block { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px; }
+    .ff-ai-header { font-size:.8rem; font-weight:700; margin-bottom:8px; }
+    .ff-teams { font-size:.78rem; color:var(--muted); line-height:1.4; }
+    .fact-split { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+    .fact-split-item { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px; display:flex; flex-direction:column; gap:4px; }
+    .fact-split-item.highlight { border-color:var(--accent2); background:linear-gradient(180deg,#2a1f1a 0%,var(--surface) 50%); }
+    .fact-split-count { font-size:1.2rem; font-weight:800; color:var(--accent); }
+    .fact-split-match { font-size:.9rem; font-weight:700; color:var(--text); }
+    .fact-split-ais { font-size:.72rem; color:var(--muted); }
+    .upset-round-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+    .upset-round-item { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px; }
+    .upset-round-ai { font-size:.75rem; font-weight:700; color:var(--upset); display:block; margin-bottom:4px; }
+    .upset-round-label { font-size:.7rem; font-weight:800; text-transform:uppercase; color:var(--muted); }
+    .upset-round-detail { font-size:.78rem; color:var(--text); margin-top:6px; line-height:1.35; }
+    .score-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; }
+    .score-item { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px; display:flex; flex-direction:column; gap:2px; }
+    .score-ai { font-size:.7rem; font-weight:700; color:var(--muted); text-transform:uppercase; }
+    .score-val { font-size:.85rem; font-weight:600; color:var(--text); }
+    .quick-hits { display:flex; flex-direction:column; gap:10px; }
+    .quick-hit { font-size:.85rem; color:var(--text); line-height:1.45; padding:10px 14px; background:var(--surface); border:1px solid var(--border); border-radius:8px; }
+    .quick-hit strong { color:var(--accent); }
+    .fact-callouts { display:flex; flex-direction:column; gap:12px; }
+    .fact-callout { display:flex; align-items:center; gap:14px; background:linear-gradient(135deg,#0d2a14 0%,var(--surface) 100%); border:1px solid #1a4a24; border-radius:12px; padding:18px 20px; }
+    .callout-icon { font-size:2rem; }
+    .callout-text { font-size:.9rem; color:var(--text); }
+    .callout-text strong { color:#3fb950; }
     @media (max-width:600px) {
+      .region-row { grid-template-columns:60px 1fr 1fr 1fr 1fr 55px; }
+      .region-name { font-size:.65rem; }
+      .region-pick { font-size:.72rem; }
       .ff-strip { grid-template-columns:repeat(2,1fr); }
       .ff-tile:nth-child(2) { border-right:none; }
       .ff-tile:nth-child(3),
@@ -628,11 +702,265 @@
 <main>
 <div class="view-bar">
   <div class="view-toggle">
-    <button class="view-btn active" onclick="setView('bracket', this)">Bracket</button>
+    <button class="view-btn active" onclick="setView('facts', this)">Cool Facts</button>
+    <button class="view-btn" onclick="setView('bracket', this)">Bracket</button>
     <button class="view-btn" onclick="setView('table', this)">Full Results</button>
   </div>
 </div>
 
+<div id="facts-panel" class="view-panel facts-panel" data-view="facts">
+  <div class="facts-hero">
+    <h2 class="facts-title">AI vs AI — The Numbers</h2>
+    <p class="facts-subtitle">Compare picks across Grok, ChatGPT, Claude &amp; Gemini</p>
+  </div>
+
+  <div class="facts-grid">
+    <div class="fact-card fact-big">
+      <div class="fact-stat">75%</div>
+      <div class="fact-label">Pick Duke to Win</div>
+      <div class="fact-detail">ChatGPT, Claude &amp; Gemini all have Duke cutting down the nets</div>
+      <div class="fact-bar"><div class="fact-bar-fill" style="width:75%"></div></div>
+    </div>
+    <div class="fact-card fact-big">
+      <div class="fact-stat">100%</div>
+      <div class="fact-label">Have Arizona in Final Four</div>
+      <div class="fact-detail">The only team every AI agrees will reach the Final Four</div>
+      <div class="fact-bar"><div class="fact-bar-fill" style="width:100%"></div></div>
+    </div>
+    <div class="fact-card fact-big">
+      <div class="fact-stat">1</div>
+      <div class="fact-label">Lone Wolf</div>
+      <div class="fact-detail">Only Grok picks Arizona to win it all — and predicts 3 Elite Eight upsets</div>
+      <div class="fact-emoji">🤖</div>
+    </div>
+    <div class="fact-card fact-big">
+      <div class="fact-stat">3</div>
+      <div class="fact-label">Elite Eight Upsets (Grok)</div>
+      <div class="fact-detail">MSU over Duke, Iowa St over Michigan, Illinois over Florida</div>
+      <div class="fact-emoji">🔥</div>
+    </div>
+    <div class="fact-card fact-big">
+      <div class="fact-stat">3</div>
+      <div class="fact-label">Identical Final Fours</div>
+      <div class="fact-detail">ChatGPT, Claude &amp; Gemini all pick Duke, Arizona, Michigan, Houston</div>
+    </div>
+    <div class="fact-card fact-big">
+      <div class="fact-stat">0</div>
+      <div class="fact-label">Grok Overlap</div>
+      <div class="fact-detail">Grok's Final Four shares zero teams with the other three AIs</div>
+      <div class="fact-emoji">🎯</div>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Championship Matchups</h3>
+    <div class="fact-split">
+      <div class="fact-split-item">
+        <span class="fact-split-count">3×</span>
+        <span class="fact-split-match">Duke vs Arizona</span>
+        <span class="fact-split-ais">ChatGPT, Claude, Gemini</span>
+      </div>
+      <div class="fact-split-item highlight">
+        <span class="fact-split-count">1×</span>
+        <span class="fact-split-match">Arizona vs Iowa State</span>
+        <span class="fact-split-ais">Grok</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Champion Picks</h3>
+    <div class="champ-comparison">
+      <div class="champ-card grok">
+        <span class="champ-emoji">🤖</span>
+        <span class="champ-ai">Grok</span>
+        <span class="champ-team">Arizona</span>
+        <span class="champ-vs">vs Iowa State</span>
+        <span class="champ-score">82-75</span>
+      </div>
+      <div class="champ-card others">
+        <span class="champ-emoji">💬</span>
+        <span class="champ-ai">ChatGPT</span>
+        <span class="champ-team">Duke</span>
+        <span class="champ-vs">vs Arizona</span>
+        <span class="champ-score">76-72</span>
+      </div>
+      <div class="champ-card others">
+        <span class="champ-emoji">🧠</span>
+        <span class="champ-ai">Claude</span>
+        <span class="champ-team">Duke</span>
+        <span class="champ-vs">vs Arizona</span>
+      </div>
+      <div class="champ-card others">
+        <span class="champ-emoji">✨</span>
+        <span class="champ-ai">Gemini</span>
+        <span class="champ-team">Duke</span>
+        <span class="champ-vs">vs Arizona</span>
+        <span class="champ-score">78-72</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Region Champions — Where They Agree &amp; Disagree</h3>
+    <div class="region-comparison">
+      <div class="region-row">
+        <span class="region-name east">East</span>
+        <span class="region-pick grok-pick">Michigan St</span>
+        <span class="region-pick same">Duke</span>
+        <span class="region-pick same">Duke</span>
+        <span class="region-pick same">Duke</span>
+        <span class="region-consensus">3 agree</span>
+      </div>
+      <div class="region-row">
+        <span class="region-name west">West</span>
+        <span class="region-pick same">Arizona</span>
+        <span class="region-pick same">Arizona</span>
+        <span class="region-pick same">Arizona</span>
+        <span class="region-pick same">Arizona</span>
+        <span class="region-consensus">Unanimous</span>
+      </div>
+      <div class="region-row">
+        <span class="region-name midwest">Midwest</span>
+        <span class="region-pick grok-pick">Iowa St</span>
+        <span class="region-pick same">Michigan</span>
+        <span class="region-pick same">Michigan</span>
+        <span class="region-pick same">Michigan</span>
+        <span class="region-consensus">3 agree</span>
+      </div>
+      <div class="region-row">
+        <span class="region-name south">South</span>
+        <span class="region-pick grok-pick">Illinois</span>
+        <span class="region-pick same">Houston</span>
+        <span class="region-pick same">Houston</span>
+        <span class="region-pick same">Houston</span>
+        <span class="region-consensus">3 agree</span>
+      </div>
+    </div>
+    <div class="region-legend">
+      <span><strong>Grok</strong> ChatGPT Claude Gemini</span>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Where Each AI Goes Bold — Upset Round</h3>
+    <div class="upset-round-grid">
+      <div class="upset-round-item">
+        <span class="upset-round-ai">🤖 Grok</span>
+        <span class="upset-round-label">Elite Eight</span>
+        <span class="upset-round-detail">(3) MSU, (2) Iowa St, (3) Illinois all upset 1-seeds</span>
+      </div>
+      <div class="upset-round-item">
+        <span class="upset-round-ai">💬 ChatGPT</span>
+        <span class="upset-round-label">First Round</span>
+        <span class="upset-round-detail">(12) High Point over (5) Wisconsin</span>
+      </div>
+      <div class="upset-round-item">
+        <span class="upset-round-ai">🧠 Claude</span>
+        <span class="upset-round-label">First Round</span>
+        <span class="upset-round-detail">(10) UCF over (7) UCLA</span>
+      </div>
+      <div class="upset-round-item">
+        <span class="upset-round-ai">✨ Gemini</span>
+        <span class="upset-round-label">Second Round</span>
+        <span class="upset-round-detail">(7) UCLA over (2) UConn</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Biggest Upset Picks</h3>
+    <div class="upset-grid">
+      <div class="upset-card">
+        <span class="upset-ai">🤖 Grok</span>
+        <span class="upset-match">(3) Michigan State def. (1) Duke</span>
+        <span class="upset-round">Elite Eight · East</span>
+      </div>
+      <div class="upset-card">
+        <span class="upset-ai">💬 ChatGPT</span>
+        <span class="upset-match">(12) High Point def. (5) Wisconsin</span>
+        <span class="upset-round">First Round · West</span>
+      </div>
+      <div class="upset-card">
+        <span class="upset-ai">🧠 Claude</span>
+        <span class="upset-match">(10) UCF def. (7) UCLA</span>
+        <span class="upset-round">First Round · East</span>
+      </div>
+      <div class="upset-card">
+        <span class="upset-ai">✨ Gemini</span>
+        <span class="upset-match">(7) UCLA def. (2) UConn</span>
+        <span class="upset-round">Second Round · East</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Final Four — Side by Side</h3>
+    <div class="ff-comparison">
+      <div class="ff-ai-block">
+        <div class="ff-ai-header">🤖 Grok</div>
+        <div class="ff-teams">Arizona · Iowa State · Michigan St · Illinois</div>
+      </div>
+      <div class="ff-ai-block">
+        <div class="ff-ai-header">💬 ChatGPT</div>
+        <div class="ff-teams">Duke · Arizona · Michigan · Houston</div>
+      </div>
+      <div class="ff-ai-block">
+        <div class="ff-ai-header">🧠 Claude</div>
+        <div class="ff-teams">Duke · Arizona · Michigan · Houston</div>
+      </div>
+      <div class="ff-ai-block">
+        <div class="ff-ai-header">✨ Gemini</div>
+        <div class="ff-teams">Duke · Arizona · Michigan · Houston</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Predicted Championship Scores</h3>
+    <div class="score-grid">
+      <div class="score-item"><span class="score-ai">Grok</span><span class="score-val">Arizona 82, Iowa St 75</span></div>
+      <div class="score-item"><span class="score-ai">ChatGPT</span><span class="score-val">Duke 76, Arizona 72</span></div>
+      <div class="score-item"><span class="score-ai">Claude</span><span class="score-val">Duke def. Arizona</span></div>
+      <div class="score-item"><span class="score-ai">Gemini</span><span class="score-val">Duke 78, Arizona 72</span></div>
+    </div>
+  </div>
+
+  <div class="facts-section">
+    <h3 class="facts-section-title">Quick Hits</h3>
+    <div class="quick-hits">
+      <div class="quick-hit">• <strong>East split:</strong> Duke (3) vs Michigan State (1) — Grok is the only one with MSU</div>
+      <div class="quick-hit">• <strong>Midwest split:</strong> Michigan (3) vs Iowa State (1) — Grok backs the Cyclones</div>
+      <div class="quick-hit">• <strong>South split:</strong> Houston (3) vs Illinois (1) — Grok has the Illini</div>
+      <div class="quick-hit">• <strong>West lock:</strong> Arizona unanimous — all 4 have the Wildcats winning the region</div>
+      <div class="quick-hit">• <strong>Different upset rounds:</strong> Grok goes late (E8), others go early (R1/R2)</div>
+      <div class="quick-hit">• <strong>UCLA appears twice:</strong> Claude has UCF beating them; Gemini has them beating UConn</div>
+    </div>
+  </div>
+
+  <div class="fact-callouts">
+    <div class="fact-callout">
+      <div class="callout-icon">🏀</div>
+      <div class="callout-text">
+        <strong>West Region = Lock</strong> — All 4 AIs pick Arizona to win the West and reach the Final Four.
+      </div>
+    </div>
+    <div class="fact-callout">
+      <div class="callout-icon">🤖</div>
+      <div class="callout-text">
+        <strong>Grok vs the herd</strong> — Every region except West: Grok picks the upset, the other 3 pick the favorite.
+      </div>
+    </div>
+    <div class="fact-callout">
+      <div class="callout-icon">📊</div>
+      <div class="callout-text">
+        <strong>Duke–Arizona in the title game</strong> — 3 of 4 AIs predict this exact championship matchup.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ai-panels-wrapper" style="display:none;">
 <div id="ai-panel-grok" class="ai-content-panel active">
 <div id="view-table" class="view-panel" data-view="table">
 
@@ -2164,6 +2492,7 @@
       </div>
     </div>
   </div>
+</div><!-- end ai-panels-wrapper -->
 
 </main>
 
@@ -2171,11 +2500,20 @@
   function setView(view, btn) {
     document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const panel = document.querySelector('.ai-content-panel.active');
-    if (panel) {
-      panel.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
-      const target = panel.querySelector('[data-view="' + view + '"]');
-      if (target) target.classList.add('active');
+    const factsPanel = document.getElementById('facts-panel');
+    const panelsWrapper = document.getElementById('ai-panels-wrapper');
+    if (view === 'facts') {
+      if (factsPanel) factsPanel.style.display = 'block';
+      if (panelsWrapper) panelsWrapper.style.display = 'none';
+    } else {
+      if (factsPanel) factsPanel.style.display = 'none';
+      if (panelsWrapper) panelsWrapper.style.display = 'block';
+      const panel = document.querySelector('.ai-content-panel.active');
+      if (panel) {
+        panel.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+        const target = panel.querySelector('[data-view="' + view + '"]');
+        if (target) target.classList.add('active');
+      }
     }
   }
 
@@ -2192,6 +2530,11 @@
       document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
       const bracketBtn = document.querySelector('.view-btn[onclick*="bracket"]');
       if (bracketBtn) bracketBtn.classList.add('active');
+      // Show AI panels, hide facts when switching AI
+      const factsPanel = document.getElementById('facts-panel');
+      const panelsWrapper = document.getElementById('ai-panels-wrapper');
+      if (factsPanel) factsPanel.style.display = 'none';
+      if (panelsWrapper) panelsWrapper.style.display = 'block';
     }
   }
 
