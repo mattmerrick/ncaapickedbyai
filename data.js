@@ -6,12 +6,25 @@
 
 const TOTAL_BRACKET_GAMES = 67;
 
+/** Official tally vs 2026 tournament results (67 games incl. First Four). */
+const FINAL_SCORECARD_2026 = {
+  actualChampion: 'Michigan',
+  actualRunnerUp: 'Arizona',
+  actualFinalFour: ['Michigan', 'Arizona', 'UConn', 'Illinois'],
+  ais: {
+    chatgpt: { gamesCorrect: 42, finalFourCorrect: 3, regionWinnersCorrect: 2, championCorrect: false, runnerUpCorrect: true },
+    claude: { gamesCorrect: 41, finalFourCorrect: 3, regionWinnersCorrect: 2, championCorrect: false, runnerUpCorrect: true },
+    gemini: { gamesCorrect: 40, finalFourCorrect: 3, regionWinnersCorrect: 2, championCorrect: false, runnerUpCorrect: true },
+    grok: { gamesCorrect: 35, finalFourCorrect: 2, regionWinnersCorrect: 2, championCorrect: false, runnerUpCorrect: false }
+  }
+};
+
 const AI_PICKS = {
   grok: {
     id: 'grok',
     name: 'Grok',
-    emoji: '🤖',
-    correctPicks: 0,
+    emoji: '\u{1F916}',
+    correctPicks: 35,
     totalGames: TOTAL_BRACKET_GAMES,
     champion: { seed: 1, team: 'Arizona', region: 'West', score: '82-75', opponent: 'Iowa State' },
     finalFour: [
@@ -37,19 +50,19 @@ const AI_PICKS = {
   chatgpt: {
     id: 'chatgpt',
     name: 'ChatGPT',
-    emoji: '💬',
-    correctPicks: 0,
+    emoji: '\u{1F4AC}',
+    correctPicks: 42,
     totalGames: TOTAL_BRACKET_GAMES,
     champion: null,
     finalFour: [],
     biggestUpset: null,
-    comingSoon: true
+    comingSoon: false
   },
   claude: {
     id: 'claude',
     name: 'Claude',
-    emoji: '🧠',
-    correctPicks: 0,
+    emoji: '\u{1F9E0}',
+    correctPicks: 41,
     totalGames: TOTAL_BRACKET_GAMES,
     champion: { seed: 1, team: 'Duke', region: 'East', score: null, opponent: 'Arizona' },
     finalFour: [
@@ -70,8 +83,8 @@ const AI_PICKS = {
   gemini: {
     id: 'gemini',
     name: 'Gemini',
-    emoji: '✨',
-    correctPicks: 0,
+    emoji: '\u2728',
+    correctPicks: 40,
     totalGames: TOTAL_BRACKET_GAMES,
     champion: { seed: 1, team: 'Duke', region: 'East', score: '78-72', opponent: 'Arizona' },
     finalFour: [

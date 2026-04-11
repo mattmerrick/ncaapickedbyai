@@ -4,6 +4,23 @@ Use this document to feed chatbots (Grok, ChatGPT, Claude, Gemini, etc.) to gene
 
 ---
 
+## 2026 tournament — final correct-picks scorecard
+
+The men’s NCAA Tournament has **67 total games** (including the 4 First Four play-in games).
+
+**Actual Final Four:** Michigan, Arizona, UConn, Illinois. **Champion:** Michigan. **Runner-up:** Arizona.
+
+| AI | Games correct (of 67) | Final Four correct (of 4) | Region winners correct (of 4) | Champion correct | Runner-up correct |
+|----|------------------------|---------------------------|-------------------------------|------------------|-------------------|
+| **ChatGPT** | **42** | **3** | **2** | No | Yes (Arizona) |
+| **Claude** | **41** | **3** | **2** | No | Yes (Arizona) |
+| **Gemini** | **40** | **3** | **2** | No | Yes (Arizona) |
+| **Grok** | **35** | **2** | **2** | No | No |
+
+**Takeaways:** ChatGPT led overall (42/67). Claude and Gemini were close (41, 40). Grok had the fewest correct (35/67) but the boldest upset picks. No AI picked Michigan to win it all. ChatGPT, Claude, and Gemini each had Arizona in the Final Four and as runner-up.
+
+---
+
 ## Quick Summary
 
 | AI | Champion | Runner-Up | Final Four | Biggest Upset |

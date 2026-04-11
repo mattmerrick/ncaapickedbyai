@@ -7,14 +7,14 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="NCAA AI Pickem - 2026 Tournament" />
-  <meta property="og:description" content="March Madness bracket predictions - Grok, ChatGPT, Claude &amp; Gemini go head-to-head. Who will the AIs pick to win?" />
+  <meta property="og:description" content="2026 March Madness: final AI bracket scorecard — ChatGPT 42/67, Claude 41, Gemini 40, Grok 35. No AI picked Michigan as champion." />
   <meta property="og:image" content="/share.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="NCAA AI Pickem - 2026 Tournament" />
-  <meta name="twitter:description" content="March Madness bracket predictions - Grok, ChatGPT, Claude &amp; Gemini go head-to-head. Who will the AIs pick to win?" />
+  <meta name="twitter:description" content="2026 March Madness: final AI bracket scorecard — ChatGPT 42/67, Claude 41, Gemini 40, Grok 35. No AI picked Michigan as champion." />
   <meta name="twitter:image" content="/share.png" />
   <style>
     :root {
@@ -420,6 +420,7 @@
     .llm-emoji { font-size:1.1rem; }
     .llm-name { font-weight:700; font-size:0.9rem; flex:1; }
     .llm-score { font-size:0.75rem; color:var(--muted); font-weight:600; }
+    .llm-score-winner { color: var(--win); font-weight: 800; }
     .llm-card-body { padding:12px; }
     .llm-champ, .llm-ff, .llm-upset { margin-bottom:8px; }
     .llm-champ:last-child, .llm-ff:last-child, .llm-upset:last-child { margin-bottom:0; }
@@ -568,6 +569,24 @@
     .quick-hits { display:flex; flex-direction:column; gap:10px; }
     .quick-hit { font-size:.85rem; color:var(--text); line-height:1.45; padding:10px 14px; background:var(--surface); border:1px solid var(--border); border-radius:8px; }
     .quick-hit strong { color:var(--accent); }
+    .tournament-results { background: var(--surface); border-bottom: 1px solid var(--border); padding: 20px 16px 24px; }
+    .tournament-results h2 { font-size: clamp(1.15rem, 3vw, 1.45rem); font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px; }
+    .results-intro { font-size: 0.85rem; color: var(--muted); line-height: 1.5; max-width: 52rem; margin-bottom: 14px; }
+    .results-intro strong { color: var(--text); }
+    .scorecard-table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--border); border-radius: 12px; background: var(--bg); }
+    .scorecard-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; min-width: 640px; }
+    .scorecard-table th, .scorecard-table td { padding: 10px 11px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .scorecard-table th { background: var(--surface2); color: var(--muted); font-weight: 800; text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.06em; line-height: 1.3; }
+    .scorecard-table tbody tr:last-child td { border-bottom: none; }
+    .scorecard-table .ai-name { font-weight: 800; color: var(--text); white-space: nowrap; }
+    .scorecard-table tr.row-top .ai-name { color: var(--win); }
+    .takeaways-list { margin: 16px 0 0; padding-left: 1.15em; line-height: 1.55; font-size: 0.84rem; color: var(--text); max-width: 52rem; }
+    .takeaways-list li { margin-bottom: 7px; }
+    .takeaways-list strong { color: var(--accent); }
+    .fb-copy-details { margin-top: 18px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface2); max-width: 52rem; }
+    .fb-copy-details summary { cursor: pointer; padding: 12px 14px; font-weight: 700; font-size: 0.82rem; list-style: none; }
+    .fb-copy-details summary::-webkit-details-marker { display: none; }
+    .fb-copy-details pre { margin: 0; padding: 14px 16px; font-size: 0.7rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word; color: var(--muted); border-top: 1px solid var(--border); font-family: ui-monospace, monospace; }
     .fact-callouts { display:flex; flex-direction:column; gap:12px; }
     .fact-callout { display:flex; align-items:center; gap:14px; background:linear-gradient(135deg,#0d2a14 0%,var(--surface) 100%); border:1px solid #1a4a24; border-radius:12px; padding:18px 20px; }
     .callout-icon { font-size:2rem; }
@@ -594,7 +613,7 @@
 
 <header>
   <h1>NCAA <span>AI Pickem</span> 2026</h1>
-  <p>March Madness bracket predictions - AI vs. AI</p>
+  <p>2026 tournament complete — full bracket vs. 67 games (incl. First Four). Actual champion: <strong style="color:var(--champion)">Michigan</strong>. See final AI scorecard below.</p>
 </header>
 
 <!-- AI selector tabs -->
@@ -607,7 +626,7 @@
 
 <div class="hero-llm-grid">
   <div class="llm-card" data-ai="grok">
-    <div class="llm-card-header"><span class="llm-emoji">🤖</span><span class="llm-name">Grok</span><span class="llm-score">0 / 67</span></div>
+    <div class="llm-card-header"><span class="llm-emoji">🤖</span><span class="llm-name">Grok</span><span class="llm-score">35 / 67</span></div>
     <div class="llm-card-body">
       <div class="llm-champ"><span class="llm-label">Champion</span><span class="llm-value">(1) Arizona</span></div>
       <div class="llm-ff"><span class="llm-label">Final 4</span><span class="llm-value">Arizona, Iowa State, Michigan State, Illinois</span></div>
@@ -615,7 +634,7 @@
     </div>
   </div>
   <div class="llm-card" data-ai="chatgpt">
-    <div class="llm-card-header"><span class="llm-emoji">&#128172;</span><span class="llm-name">ChatGPT</span><span class="llm-score">0 / 67</span></div>
+    <div class="llm-card-header"><span class="llm-emoji">&#128172;</span><span class="llm-name">ChatGPT</span><span class="llm-score llm-score-winner">42 / 67</span></div>
     <div class="llm-card-body">
       <div class="llm-champ"><span class="llm-label">Champion</span><span class="llm-value">(1) Duke</span></div>
       <div class="llm-ff"><span class="llm-label">Final 4</span><span class="llm-value">Duke, Arizona, Michigan, Houston</span></div>
@@ -623,7 +642,7 @@
     </div>
   </div>
   <div class="llm-card" data-ai="claude">
-    <div class="llm-card-header"><span class="llm-emoji">&#129504;</span><span class="llm-name">Claude</span><span class="llm-score">0 / 67</span></div>
+    <div class="llm-card-header"><span class="llm-emoji">&#129504;</span><span class="llm-name">Claude</span><span class="llm-score">41 / 67</span></div>
     <div class="llm-card-body">
       <div class="llm-champ"><span class="llm-label">Champion</span><span class="llm-value">(1) Duke</span></div>
       <div class="llm-ff"><span class="llm-label">Final 4</span><span class="llm-value">Duke, Arizona, Michigan, Houston</span></div>
@@ -631,13 +650,95 @@
     </div>
   </div>
   <div class="llm-card" data-ai="gemini">
-    <div class="llm-card-header"><span class="llm-emoji">&#9733;</span><span class="llm-name">Gemini</span><span class="llm-score">0 / 67</span></div>
+    <div class="llm-card-header"><span class="llm-emoji">&#9733;</span><span class="llm-name">Gemini</span><span class="llm-score">40 / 67</span></div>
     <div class="llm-card-body">
       <div class="llm-champ"><span class="llm-label">Champion</span><span class="llm-value">(1) Duke</span></div>
       <div class="llm-ff"><span class="llm-label">Final 4</span><span class="llm-value">Duke, Arizona, Michigan, Houston</span></div>
       <div class="llm-upset"><span class="llm-label">Biggest Upset</span><span class="llm-value">(7) UCLA def. (2) UConn</span></div>
     </div>
   </div>
+</div>
+
+<div class="tournament-results" id="final-scorecard-2026">
+  <h2>Final correct picks — 2026 NCAA Tournament</h2>
+  <p class="results-intro">The men’s NCAA Tournament has <strong>67 total games</strong> (including the four First Four play-in games). <strong>Actual Final Four:</strong> Michigan, Arizona, UConn, Illinois. <strong>Champion:</strong> Michigan. Below is how many games each AI picked correctly, plus Final Four, region winners, champion, and runner-up accuracy.</p>
+  <div class="scorecard-table-wrap">
+    <table class="scorecard-table">
+      <thead>
+        <tr>
+          <th scope="col">AI</th>
+          <th scope="col">Games correct (of 67)</th>
+          <th scope="col">Final Four (of 4)</th>
+          <th scope="col">Region winners (of 4)</th>
+          <th scope="col">Champion</th>
+          <th scope="col">Runner-up</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-top">
+          <td class="ai-name">ChatGPT</td>
+          <td><strong>42</strong></td>
+          <td>3</td>
+          <td>2</td>
+          <td>No</td>
+          <td>Yes (Arizona)</td>
+        </tr>
+        <tr>
+          <td class="ai-name">Claude</td>
+          <td><strong>41</strong></td>
+          <td>3</td>
+          <td>2</td>
+          <td>No</td>
+          <td>Yes (Arizona)</td>
+        </tr>
+        <tr>
+          <td class="ai-name">Gemini</td>
+          <td><strong>40</strong></td>
+          <td>3</td>
+          <td>2</td>
+          <td>No</td>
+          <td>Yes (Arizona)</td>
+        </tr>
+        <tr>
+          <td class="ai-name">Grok</td>
+          <td><strong>35</strong></td>
+          <td>2</td>
+          <td>2</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="takeaways-list">
+    <li><strong>ChatGPT</strong> had the most correct picks overall (42/67).</li>
+    <li><strong>Claude</strong> and <strong>Gemini</strong> were very close behind (41 and 40).</li>
+    <li><strong>Grok</strong> had the fewest correct (35/67), but was the boldest with bigger upsets.</li>
+    <li><strong>No AI</strong> correctly predicted the champion (<strong>Michigan</strong>).</li>
+    <li>ChatGPT, Claude, and Gemini each correctly had <strong>Arizona</strong> in the Final Four and as runner-up.</li>
+  </ul>
+  <details class="fb-copy-details">
+    <summary>Ready-to-post Facebook / Reels copy</summary>
+    <pre>**&#128680; Final AI Bracket Score 2026!**
+
+We ran the full March Madness bracket through 4 AIs. Here's exactly how many games each got **RIGHT** out of all 67 games:
+
+- **ChatGPT**: **42 correct** &#8592; Winner!
+- **Claude**: **41 correct**
+- **Gemini**: **40 correct**
+- **Grok**: **35 correct** (but had the wildest picks &#128514;)
+
+**Final Four accuracy:**
+ChatGPT, Claude &amp; Gemini each got **3 out of 4** Final Four teams right.
+Grok got **2 out of 4**.
+
+**Champion?** Nobody got Michigan right.
+**Runner-Up?** 3 out of 4 AIs nailed Arizona.
+
+Even the smartest AIs got bracket busted... just like the rest of us! &#128514;
+
+Who had the best bracket in your group? Drop your score below &#128071;</pre>
+  </details>
 </div>
 
 <div class="marketplace-section">
@@ -711,7 +812,7 @@
 <div id="facts-panel" class="view-panel facts-panel" data-view="facts">
   <div class="facts-hero">
     <h2 class="facts-title">AI vs AI — The Numbers</h2>
-    <p class="facts-subtitle">Compare picks across Grok, ChatGPT, Claude &amp; Gemini</p>
+    <p class="facts-subtitle">Pre-tournament picks compared — plus <strong style="color:var(--win)">final scores</strong> in the cards above and the <a href="#final-scorecard-2026" style="color:var(--accent)">tournament results table</a></p>
   </div>
 
   <div class="facts-grid">
